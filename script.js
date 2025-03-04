@@ -18,6 +18,13 @@ colorButton.addEventListener("click", () => {
   colorBox.style.backgroundColor = randomColor;
 });
 
+const element = document.querySelector("#color-box");
+window.addEventListener("scroll", () => {
+  const randomX = (Math.random() - 2) * 4;
+  const randomY = (Math.random() - 2) * 4;
+  element.style.transform = `translate(${randomX}px, ${randomY}px)`;
+});
+
 // Form submission handling
 const form = document.getElementById("feedback-form");
 const formResponse = document.getElementById("form-response");
