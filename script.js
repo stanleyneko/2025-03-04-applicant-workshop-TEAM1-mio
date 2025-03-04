@@ -31,10 +31,15 @@ const formResponse = document.getElementById("form-response");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  const name = document.getElementById("name").value;
-  const feedback = document.getElementById("feedback").value;
-  formResponse.textContent = `Thank you, ${name}, for your feedback: "${feedback}"`;
-  form.reset();
+  const name = document.getElementById("name").value.trim();
+  const feedback = document.getElementById("feedback").value.trim();
+
+  if (name === "" || feedback === "") {
+    formResponse.textContent = `Please enter your name and feedback`;
+  } else {
+    formResponse.textContent = `Thank you, ${name}, for your feedback: "${feedback}"`;
+    form.reset();
+  }
 });
 
 // Function to render the items on data-container
