@@ -20,8 +20,8 @@ colorButton.addEventListener("click", () => {
 
 const element = document.querySelector("#color-box");
 window.addEventListener("scroll", () => {
-  const randomX = (Math.random() - 2) * 4;
-  const randomY = (Math.random() - 2) * 4;
+  const randomX = Math.random() * 10;
+  const randomY = Math.random() * 10;
   element.style.transform = `translate(${randomX}px, ${randomY}px)`;
 });
 
