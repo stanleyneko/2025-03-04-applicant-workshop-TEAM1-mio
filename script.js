@@ -35,9 +35,11 @@ form.addEventListener("submit", (event) => {
   const feedback = document.getElementById("feedback").value.trim();
 
   if (name === "" || feedback === "") {
-    formResponse.textContent = `Please enter your name and feedback`;
+    formResponse.textContent = `*Please enter your name or feedback`;
+    formResponse.style.color = "red";
   } else {
     formResponse.textContent = `Thank you, ${name}, for your feedback: "${feedback}"`;
+    formResponse.style.color = "green";
     form.reset();
   }
 });
